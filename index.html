@@ -6,57 +6,44 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
-    <script src='main.js'></script>
+    <style>
+        .heading{
+            font-size: 30px;;
+        }
+    </style>
 </head>
 <body class="font">
     <div class="container">
-        <h1>ToDo List</h1>
+        <h1 class="heading">ToDo List</h1>
         <div class="todo shadow">
 
             <div class="inputDiv bg">
                 <img class="icon " src="/images/task.png" />
                 <input class="bg font" id="input" type="text" name="input" placeholder="Type your ToDo here" />
-                <img class="icon " src="/images/addIcon.png" />
+                <img class="icon " onclick="add()" src="/images/addIcon.png" />
             </div>
             <div class="task">
                 <div class="left">
                     <img class="icon1" src="/images/seen.png" />
-                    <h6 >Complete all tasks</h6>
+                    <h6 onclick="completeAll()">Complete all tasks</h6>
                 </div>
                 <div class="right">
-                    <h6>Clear Completed</h6>
+                    <h6 onclick="clearCompleted()">Clear Completed</h6>
                 </div>
             </div>
             <hr class="style-one"/>
             <div class="task">
                 <div class="left">
-                    <h6>2 Tasks left</h6>
+                    <h6 id="taskcount"></h6>
                 </div>
                 <div class="right">
-                    <h6 class="bold">All</h6>
-                    <h6>Uncomplete</h6>
-                    <h6>Completed</h6>
+                    <h6 id="all" onClick="getAll()">All</h6>
+                    <h6 id="uncomplete" onclick="getPending()">Uncomplete</h6>
+                    <h6 id="completed" onclick="getDone()">Completed</h6>
                 </div>
             </div>
-            <div class="todos">
-                <div class="oneTodo bg">
-                     <div class="left">
-                        <img src="/images/circle.png" class="icon1"/>
-                        <h5>Here is the task name</h5>
-                     </div>
-                     <div class="right">
-                        <img src="/images/cancel.png" class="icon1"/>
-                     </div>
-                </div>
-                <div class="oneTodo bg">
-                    <div class="left">
-                       <img src="/images/circletick.png" class="icon1"/>
-                       <h5>Here is the task name</h5>
-                    </div>
-                    <div class="right">
-                       <img src="/images/cancel.png" class="icon1"/>
-                    </div>
-               </div>
+            <div id="todos" class="todos">
+
             </div>
         </div>
     </div>

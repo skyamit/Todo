@@ -75,6 +75,7 @@ body{
     align-items:center;
 }
 h1,h2,h3,h4,h5,h6,p{
+    font-size: small;
     margin:10px;
 }
 .task{
@@ -98,7 +99,7 @@ hr{
     background-image: -o-linear-gradient(left, rgb(0, 0, 0), rgb(132, 132, 132), rgb(0, 0, 0));
 }
 .bold{
-    font-size: 14px;
+    font-family: cursive;
 }
 .todos{
     display: flex;
@@ -111,4 +112,11 @@ hr{
     padding: 10px;
     justify-content: space-between;
     border-radius: 10px;
+}
+
+.center{
+    text-align: center;
+}
+.red{
+    color:red;
 }
