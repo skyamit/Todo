@@ -27,33 +27,6 @@ function getAll(){
     callAll();
 }
 
-function getA(){
-    if(arr.length === 0){
-        todos.innerHTML = '<div class="center red">'+
-                            '<h4>No Task Available</h4>'+
-                        '</div>';
-    }
-    else{
-        todos.innerHTML = "";
-        for(var e=arr.length-1; e>=0; e--){
-            var image = '<img name="update" src="/images/circle.png" class="icon1 update" id="'+e+'"/>';
-            if(arr[e].stat){
-                image ='<img name="update" src="/images/circletick.png" class="icon1 update" id="'+e+'"/>';
-            }
-            var todo = '<div class="oneTodo bg">'+
-                            '<div class="left">'+
-                            image+
-                            '<h5>'+arr[e].val+'</h5>'+
-                            '</div>'+
-                            '<div class="right">'+
-                            '<img name="delete" src="/images/cancel.png" class="icon1 delete" id="'+e+'"/>'+
-                            '</div>'+
-                        '</div>';
-            todos.innerHTML += todo;
-        }
-    }
-}
-
 function getDone(){
     curr = 1;
     callAll();
@@ -123,6 +96,34 @@ function getP(){
         }
     }
 }
+
+function getA(){
+    if(arr.length === 0){
+        todos.innerHTML = '<div class="center red">'+
+                            '<h4>No Task Available</h4>'+
+                        '</div>';
+    }
+    else{
+        todos.innerHTML = "";
+        for(var e=arr.length-1; e>=0; e--){
+            var image = '<img name="update" src="/images/circle.png" class="icon1 update" id="'+e+'"/>';
+            if(arr[e].stat){
+                image ='<img name="update" src="/images/circletick.png" class="icon1 update" id="'+e+'"/>';
+            }
+            var todo = '<div class="oneTodo bg">'+
+                            '<div class="left">'+
+                            image+
+                            '<h5>'+arr[e].val+'</h5>'+
+                            '</div>'+
+                            '<div class="right">'+
+                            '<img name="delete" src="/images/cancel.png" class="icon1 delete" id="'+e+'"/>'+
+                            '</div>'+
+                        '</div>';
+            todos.innerHTML += todo;
+        }
+    }
+}
+
 
 function add(){
     if(input.value === ""){
